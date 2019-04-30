@@ -1,0 +1,111 @@
+{% load static %}
+{% load page_active %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>{{ request.resolver_match.url_name}}</title>
+  <!-- favicon link -->
+  <link rel="shortcut icon" href="/static/img/icon-search.png" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- static css link -->
+  <link rel="stylesheet" href="{% static 'css/header.css' %}">
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+  <!-- materialize.css-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- fontawsome link -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  <!-- materialize font link -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- jquery cdns -->
+  <script src="https://code.jquery.com/jquery-3.4.0.js" integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo=" crossorigin="anonymous"></script>
+
+  <!-- materialize script link -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <!-- static js link -->
+  <script type="text/javascript" src="{% static 'js/header.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/home.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/login.js' %}"></script>
+
+
+
+</head>
+
+
+<body>
+  <!-- start navbar -->
+  <nav>
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo">Search Kiau</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+      {% if user.is_authenticated %}
+      <ul class="left hide-on-med-and-down">
+        <li class="{{posts}}"><a href="/post">Posts <i class="fas fa-pen"></i></a></li>
+        <li class="{{profile}}"><a href="/profile">Profile <i class="fas fa-id-badge"></i></a></li>
+        <li class="{{rezerve}}"><a href="/rezerve">Reserve <i class="fas fa-angle-double-down"></i></a></li>
+        <li class="{{poll}}"><a href="/poll">Poll <i class="fas fa-poll"></i></a></li>
+        </li>
+      </ul>
+      <ul class="right hide-on-med-and-down">
+        {% else %}
+        <ul class="right hide-on-med-and-down">
+          <li class="{{signup}}"><a href="/signup">Sign up <i class="fas fa-user-plus"></i></a></li>
+          <li class="{{login}}"><a href="/login">Login <i class="fas fa-level-up-alt"></i></a></li>
+          {% endif %}
+          <li class="{{about}}"><a href="/about">About us <i class="fas fa-shield-alt"></i></a></li>
+          <li class="{{home}}"><a href="/">Home <i class="fas fa-house-damage"></i></a></li>
+        </ul>
+    </div>
+    <!-- <div class="nav-wrapper mynav2">
+      <div class="col s12">
+        {% if request.resolver_match.url_name is "Search Kiau" %}
+        <a href="#!" class="breadcrumb">home</a>
+        {% else %}
+        <a href="#!" class="breadcrumb">{{ request.resolver_match.url_name}}</a>
+        {% endif %}
+        <a href="#!" class="breadcrumb">Second</a>
+        <a href="#!" class="breadcrumb">Third</a>
+      </div>
+    </div> -->
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li class="{{home2}}"><a href="/">Home</a></li>
+    {% if user.is_authenticated %}
+    <li class="{{posts2}}"><a href="/post">Posts </a></li>
+    <li class="{{profile2}}"><a href="/profile">Profile</a></li>
+    <li class="{{rezerve2}}"><a href="/reserve">Reserve</a></li>
+    <li class="{{poll2}}"><a href="/poll">Poll</a></li>
+    {% else %}
+    <li class="{{login2}}"><a href="/login">Login</a></li>
+    <li class="{{signup2}}"><a href="/sign">Sign up</a></li>
+    {% endif %}
+    <li class="{{about2}}"><a href="/about">About us</a></li>
+  </ul>
+  <!-- end navbare -->
+
+  <!-- start float button -->
+  {% if user.is_authenticated %}
+  <div class="fixed-action-btn">
+    <a class="btn-floating btn-large" >
+      <i class="large material-icons">exit_to_app
+      </i>
+    </a>
+    <ul>
+      <li><a class="btn-floating blue tooltipped" data-position="left" data-tooltip="Profile"><i class="material-icons">person_pin</i></a></li>
+      <li><a class="btn-floating green tooltipped" data-position="left" data-tooltip="creat a post"><i class="material-icons">create</i></a></li>
+        <li><a href="/logout/" class="btn-floating red tooltipped" data-position="left" data-tooltip="Exit"><i class="material-icons">power_settings_new</i></a></li>
+    </ul>
+  </div>
+  {% endif %}
+
+
+  <!-- end float button -->

@@ -1,0 +1,51 @@
+{% include "header.html" %}
+{% if user.is_authenticated %}
+<div class="col s12 m2">
+  <p class="z-depth-5 login_text">You are logged in now!<br />
+    <a href="/logout/" class="waves-effect waves-light btn mybtn2"><i class="material-icons left ">power_settings_new</i>log out</a>
+    <a href="/" class="waves-effect waves-light btn mybtn3"><i class="material-icons left ">arrow_forward</i>return home</a>
+
+
+  </p>
+  <hr>
+</div>
+{% else %}
+
+{% if error is True %}
+<div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  <strong>Username</strong> or <strong>password</strong> is not True!
+</div>
+{% endif %}
+{% if error2 is True %}
+<div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  This <strong>Username</strong> is not exist!
+</div>
+{% endif %}
+<div class="row mylogin">
+
+  <form class="col s12" action="." , method="post">
+    {%csrf_token%}
+    <div class="row myrow1">
+      <div class="input-field col s6">
+        <i class="material-icons prefix">person_outline</i>
+        <input id="icon_prefix" type="text" class="validate" required name="username">
+        <label for="icon_prefix">Username</label>
+      </div>
+      <div class="input-field col s6">
+        <i class="material-icons prefix">lock_outline</i>
+        <input id="password" type="password" class="validate" required name="password">
+        <label for="password">Password</label>
+      </div>
+    </div>
+    <div class="row mybtn">
+      <button class="btn waves-effect waves-light " type="submit" name="action">Login
+        <i class="material-icons right">send</i>
+      </button>
+    </div>
+  </form>
+</div>
+</body>
+</html>
+{% endif %}

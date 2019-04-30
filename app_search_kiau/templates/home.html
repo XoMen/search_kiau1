@@ -1,0 +1,54 @@
+{% include "header.html" %}
+<!-- start of welcomming text -->
+{% if user.is_authenticated %}
+<div class="card-panel z-depth-1">
+  <span>Welcome {{user.first_name}}</span>
+</div>
+{% endif %}
+<!-- end of welcomming text -->
+
+<!-- start of tabs -->
+<div class="row mytab">
+  <div class="col s12">
+    <ul class="tabs" style="background">
+      <li class="tab col s2 active"><a href="#test1">All</a></li>
+      <li class="tab col s4"><a href="#test2">Mathematics</a></li>
+      <li class="tab col s3"><a href="#test3">General</a></li>
+      <li class="tab col s3"><a href="#test4">Pamphlets</a></li>
+    </ul>
+  </div>
+  <div id="test1" class="col s12">
+    <div class="row ">
+      {% for post in mypost %}
+      <div class="col s4 m4 mycard">
+        <div class="card ">
+          <div class="card-image">
+            <img src="https://materializecss.com/images/sample-1.jpg">
+          </div>
+          <div class="card-content">
+            <span class="card-title">{{post.title}}</span>
+            <hr>
+          </div>
+          <div class="card-content book_info">
+            <h6>:نام کتاب <i class="fas fa-book"></i> </h6>
+
+          </div>
+          <div class="card-action">
+            <a href="#">This is a link</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+
+      <!--  -->
+    </div>
+  </div>
+  <div id="test2" class="col s12">Test2</div>
+  <div id="test3" class="col s12">Test3</div>
+  <div id="test4" class="col s12">Test4</div>
+</div>
+<!-- end of tabs -->
+</body>
+
+</html>
