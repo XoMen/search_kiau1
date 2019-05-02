@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app_search_kiau',
-    'django_markup',
 ]
 
 MIDDLEWARE = [
