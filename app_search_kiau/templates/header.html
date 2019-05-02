@@ -46,7 +46,7 @@
   <nav>
     <div class="nav-wrapper">
       <a href="/" class="brand-logo">Search Kiau</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+      <a data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars mymenu_btn"></i></a>
       {% if user.is_authenticated %}
       <!-- <ul class="left hide-on-med-and-down">
         <li class="{{posts}}"><a href="/post">Posts <i class="fas fa-pen"></i></a></li>
@@ -102,7 +102,7 @@
     </a>
     <ul>
       <li><a class="btn-floating blue tooltipped" data-position="left" data-tooltip="Profile"><i class="material-icons">person_pin</i></a></li>
-      <li><a href="/createpost/"class="btn-floating green tooltipped" data-position="left" data-tooltip="creat a post"><i class="material-icons">create</i></a></li>
+      <li><a href="/createpost/" class="btn-floating green tooltipped" data-position="left" data-tooltip="creat a post"><i class="material-icons">create</i></a></li>
         <li><a href="/logout/" class="btn-floating red tooltipped" data-position="left" data-tooltip="Exit"><i class="material-icons">power_settings_new</i></a></li>
     </ul>
   </div>

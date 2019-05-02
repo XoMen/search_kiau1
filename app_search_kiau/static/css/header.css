@@ -102,3 +102,8 @@ nav .brand-logo {
 .breadcrumb::before {
   color: rgb(78, 78, 78) !important
 }
+.mymenu_btn{
+  font-size: 35px !important;
+  color:grey !important;
+  cursor: pointer !important;
+}
