@@ -47,13 +47,13 @@
       <a href="/" class="brand-logo">Search Kiau</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
       {% if user.is_authenticated %}
-      <ul class="left hide-on-med-and-down">
+      <!-- <ul class="left hide-on-med-and-down">
         <li class="{{posts}}"><a href="/post">Posts <i class="fas fa-pen"></i></a></li>
         <li class="{{profile}}"><a href="/profile">Profile <i class="fas fa-id-badge"></i></a></li>
         <li class="{{rezerve}}"><a href="/rezerve">Reserve <i class="fas fa-angle-double-down"></i></a></li>
         <li class="{{poll}}"><a href="/poll">Poll <i class="fas fa-poll"></i></a></li>
         </li>
-      </ul>
+      </ul> -->
       <ul class="right hide-on-med-and-down">
         {% else %}
         <ul class="right hide-on-med-and-down">
@@ -80,10 +80,10 @@
   <ul class="sidenav" id="mobile-demo">
     <li class="{{home2}}"><a href="/">Home</a></li>
     {% if user.is_authenticated %}
-    <li class="{{posts2}}"><a href="/post">Posts </a></li>
+    <!-- <li class="{{posts2}}"><a href="/post">Posts </a></li>
     <li class="{{profile2}}"><a href="/profile">Profile</a></li>
     <li class="{{rezerve2}}"><a href="/reserve">Reserve</a></li>
-    <li class="{{poll2}}"><a href="/poll">Poll</a></li>
+    <li class="{{poll2}}"><a href="/poll">Poll</a></li> -->
     {% else %}
     <li class="{{login2}}"><a href="/login">Login</a></li>
     <li class="{{signup2}}"><a href="/sign">Sign up</a></li>
