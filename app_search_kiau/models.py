@@ -6,9 +6,10 @@ class post(models.Model):
     title = models.CharField(max_length=120, blank=True, null=True)
     name = models.CharField(max_length=120, blank=True, null=True)
     author = models.CharField(max_length=120, blank=True, null=True)
-    year = models.CharField(max_length=120, blank=True, null=True)
+    year = models.IntegerField(max_length=120, blank=True, null=True)
     rank = models.CharField(max_length=120, blank=True, null=True)
-    cost = models.CharField(max_length=120, blank=True, null=True)
+    old_price = models.IntegerField(blank=True, null=True)
+    new_price = models.IntegerField(blank=True, null=True)
     description = models.TextField(max_length=120, blank=True, null=True)
 
     tag = models.CharField(max_length=50, default="all")

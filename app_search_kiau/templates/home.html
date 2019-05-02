@@ -30,19 +30,38 @@
             <hr>
           </div>
           <div class="card-content book_info">
-            <h6>:نام کتاب <i class="fas fa-book"></i> </h6>
-            <h6>:نام نویسنده <i class="fas fa-portrait"></i> </h6>
-            <h6>:سال چاپ <i class="fas fa-calendar-check"></i> </h6>
-            <h6>:میزان نو بودن <i class="fas fa-award"></i> </h6>
-            <h6>:قیمت فروش <i class="fas fa-dollar-sign"></i> </h6>
+            <div class=>
+              <span>نام کتاب: <span class="myinfo">{{post.name}}</span>
+              <i class="fas fa-book"></i> </span>
+            </div>
+
+            <div>
+              <span>نام نویسنده : <span class="myinfo">{{post.author}}</span>
+              <i class="fas fa-portrait"></i> </span>
+            </div>
+
+            <div>
+              <span>سال چاپ: <span class="myinfo">{{post.year}}</span>
+              <i class="fas fa-calendar-check"></i> </span>
+            </div>
+
+            <div>
+              <span>میزان نو بودن: <span class="myinfo"> %{{post.rank}}</span>
+              <i class="fas fa-award"></i> </span>
+            </div>
+
+            <div>
+              <span>قیمت فروش:<span class="mycostinfo_new"> {{post.new_price}} تومان</span> <span class="mycostinfo_old">{{post.old_price}}</span>
+                <i class="fas fa-dollar-sign"></i> </span>
+            </div>
+
 
           </div>
           <div class="card-action buy_btn">
-            <a href="#">اطلاعات بیشتر</a>
+            <a href="#">اطلاعات بیشتر و خرید</a>
           </div>
         </div>
       </div>
-      {% endfor %}
 
 
       <!--  -->

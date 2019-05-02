@@ -87,14 +87,28 @@ float: none !important
   }
 }
 
-.book_info{
+.book_info {
   padding-top: 2px !important;
-
-}
-.book_info h6{
-  line-height: 1.5;
+  line-height: 2.2 !important;
   text-align: right !important;
+  font-weight: 450 !important;
+  font-size: 1.16rem !important;
 }
+.myinfo{
+  color: rgb(0, 112, 150) !important;
+}
+.mycostinfo_old{
+  font-size: 1.3rem !important;
+  float: left;
+  text-decoration: line-through;
+  text-decoration-color:red;
+}
+.mycostinfo_new{
+  font-size: 1.3rem !important;
+  color: rgb(0, 102, 70) !important;
+  font-weight: 450 !important
+}
+
 .buy_btn{
   text-align: center;
 }
