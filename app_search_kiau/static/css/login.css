@@ -38,6 +38,15 @@
   .mylogin {
     width: 90%;
   }
+  .alert{
+    width: 90% !important;
+    margin-top: 6% !important;
+  }
+  .login_text{
+    width: 100% !important;
+    font-size: 18pt !important;
+    padding-top: 2% !important;
+  }
 }
 
 /* end login form styles */
@@ -45,7 +54,7 @@
 .alert {
   width: 40%;
   margin: 0 auto;
-  margin-top: 1% !important;
+  margin-top: 1%;
   border-radius: 50px;
   padding: 20px;
   background-color: #f44336;
@@ -70,8 +79,7 @@
 /* end alert box style */
 .login_text {
   font-family: verdana;
-  height: 200px !important;
-  width: 50% !important;
+  width: 50%;
   margin: 0 auto !important;
   text-align: center !important;
   padding: 4% !important;
