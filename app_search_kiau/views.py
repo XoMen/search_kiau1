@@ -33,3 +33,6 @@ def login_(request):
 def logout_(request):
         logout(request)
         return HttpResponseRedirect("/")
+
+def createpost(request):
+    return render(request,"createpost.html")        

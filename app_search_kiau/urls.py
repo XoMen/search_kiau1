@@ -5,7 +5,8 @@ from django.conf.urls.static import static
 urlpatterns = [
 path('' , views.home , name="Search Kiau"),
 path('login/' , views.login_, name="login"),
-path('logout/' , views.logout_ , name="logout")
+path('logout/' , views.logout_ , name="logout"),
+path('createpost/' , views.createpost , name="createpost"),
 
 
 
