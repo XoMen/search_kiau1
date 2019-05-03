@@ -89,6 +89,7 @@ float: none !important
 
 .book_info {
   padding-top: 2px !important;
+  padding-bottom: 38px !important;
   line-height: 2.2 !important;
   text-align: right !important;
   font-weight: 450 !important;
@@ -113,6 +114,7 @@ float: none !important
   text-align: center;
 }
 .buy_btn a{
+  margin-right: 0 !important;
   color: rgb(10, 133, 136) !important;
   font-weight: 700 !important;
 }

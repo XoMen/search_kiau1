@@ -20,6 +20,7 @@
   <div id="test1" class="col s12">
     <div class="row ">
       {% for post in mypost %}
+        {%if post.active%}
       <div class="col s4 m4 mycard">
         <div class="card ">
           <div class="card-image">
@@ -62,6 +63,7 @@
           </div>
         </div>
       </div>
+        {% endif %}
       {% endfor %}
 
       <!--  -->

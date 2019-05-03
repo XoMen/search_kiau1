@@ -2,12 +2,12 @@ from django.db import models
 
 
 class post(models.Model):
-    # image = models.ImageField(upload_to=post_pictures/)
+    active = models.BooleanField(default=False)
     title = models.CharField(max_length=120, blank=True, null=True)
-    name = models.CharField(max_length=120, blank=True, null=True)
-    author = models.CharField(max_length=120, blank=True, null=True)
-    year = models.IntegerField(max_length=120, blank=True, null=True)
-    rank = models.CharField(max_length=120, blank=True, null=True)
+    name = models.CharField(max_length=25, blank=True, null=True)
+    author = models.CharField(max_length=25, blank=True, null=True)
+    year = models.IntegerField(max_length=4, blank=True, null=True)
+    rank = models.CharField(max_length=3, blank=True, null=True)
     old_price = models.IntegerField(blank=True, null=True)
     new_price = models.IntegerField(blank=True, null=True)
     description = models.TextField(max_length=120, blank=True, null=True)
