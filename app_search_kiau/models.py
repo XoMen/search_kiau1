@@ -3,7 +3,7 @@ from django.db import models
 
 class post(models.Model):
     active = models.BooleanField(default=False)
-    title = models.CharField(max_length=120, blank=True, null=True)
+    title = models.CharField(max_length=25 , default="فروش کتاب" , editable=False)
     name = models.CharField(max_length=25, blank=True, null=True)
     author = models.CharField(max_length=25, blank=True, null=True)
     year = models.IntegerField(blank=True, null=True)
@@ -15,4 +15,4 @@ class post(models.Model):
     tag = models.CharField(max_length=50, default="all")
 
     def __str__(self):
-        return self.title
+        return self.name
