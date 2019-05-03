@@ -35,4 +35,21 @@ def logout_(request):
         return HttpResponseRedirect("/")
 
 def createpost(request):
-    return render(request,"createpost.html")        
+    error=False
+    if request.method == 'POST':
+        book_tag = request.POST.get("select_tag")
+        book_name = request.POST.get("book_name")
+        book_author = request.POST.get("book_author")
+        book_year = request.POST.get("book_year")
+        book_rank = request.POST.get("book_rank")
+        book_cost0 = request.POST.get("book_cost0")
+        book_cost1 = request.POST.get("book_cost1")
+        if request.POST.get("book_description") is not None:
+            book_description = request.POST.get("book_description")
+        newpost = post(name=book_name , author=book_author , year=book_year , rank=book_rank , old_price=book_cost0 , new_price=book_cost1 , description=book_description , tag=book_tag)
+        newpost.save()
+        if newpost is not None:
+            error=True
+    return render(request, "createpost.html",{
+    "error" : error
+    })

@@ -1,16 +1,23 @@
 {% include "header.html" %}
 {% if user.is_authenticated %}
+{% if error%}
+<div class="alert green">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  <center>  درخواست شما ثبت شد . منتظر تایید باشید
+</center>
+</div>
+{% endif %}
 <div class="row mylogin">
   <form class="col s12" action="." , method="post">
     {%csrf_token%}
     <div class="row myrow1">
       <div class="row">
         <div class="input-field col s12">
-          <select>
-            <option value="" disabled selected>انتخاب کنید</option>
-            <option value="1">ریاضیات</option>
-            <option value="2">عمومی</option>
-            <option value="3">جزوه</option>
+          <select name="select_tag" required class="validate">
+            <option disabled selected>انتخاب کنید</option>
+            <option value="math">ریاضیات</option>
+            <option value="general">عمومی</option>
+            <option value="pamph">جزوه</option>
           </select>
           <label>دسته بندی</label>
         </div>
