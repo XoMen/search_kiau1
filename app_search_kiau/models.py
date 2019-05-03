@@ -15,4 +15,4 @@ class post(models.Model):
     tag = models.CharField(max_length=50, default="all")
 
     def __str__(self):
-        return self.title
+        return self.name
