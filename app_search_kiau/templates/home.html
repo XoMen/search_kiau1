@@ -11,13 +11,13 @@
 <div class="row mytab">
   <div class="col s12">
     <ul class="tabs" style="background">
-      <li class="tab col s2 active"><a href="#test1">All</a></li>
-      <li class="tab col s4"><a href="#test2">Mathematics</a></li>
-      <li class="tab col s3"><a href="#test3">General</a></li>
-      <li class="tab col s3"><a href="#test4">Pamphlets</a></li>
+      <li class="tab col s2 active"><a href="#all">All</a></li>
+      <li class="tab col s4"><a href="#math">Mathematics</a></li>
+      <li class="tab col s3"><a href="#general">General</a></li>
+      <li class="tab col s3"><a href="#pamphlets">Pamphlets</a></li>
     </ul>
   </div>
-  <div id="test1" class="col s12">
+  <div id="all" class="col s12">
     <div class="row ">
       {% for post in mypost %}
         {%if post.active%}
@@ -69,9 +69,150 @@
       <!--  -->
     </div>
   </div>
-  <div id="test2" class="col s12">Test2</div>
-  <div id="test3" class="col s12">Test3</div>
-  <div id="test4" class="col s12">Test4</div>
+  <div id="math" class="col s12">
+    {% for post in mypost %}
+      {% if post.active and post.tag == "math" %}
+      <div class="col s4 m4 mycard">
+        <div class="card ">
+          <div class="card-image waves-effect waves-light">
+            <img  src="https://www.wmmpa.com/wp-content/uploads/2017/02/book-icon.png" style="height:300px !important">
+          </div>
+          <div class="card-content mycard-content">
+            <span class="card-title">{{post.title}}</span>
+            <hr>
+          </div>
+          <div class="card-content book_info">
+            <div class=>
+              <span>نام کتاب: <span class="myinfo">{{post.name}}</span>
+              <i class="fas fa-book"></i> </span>
+            </div>
+
+            <div>
+              <span>نام نویسنده : <span class="myinfo">{{post.author}}</span>
+              <i class="fas fa-portrait"></i> </span>
+            </div>
+
+            <div>
+              <span>سال چاپ: <span class="myinfo">{{post.year}}</span>
+              <i class="fas fa-calendar-check"></i> </span>
+            </div>
+
+            <div>
+              <span>میزان نو بودن: <span class="myinfo"> %{{post.rank}}</span>
+              <i class="fas fa-award"></i> </span>
+            </div>
+
+            <div>
+              <span>قیمت فروش:<span class="mycostinfo_new"> {{post.new_price}} تومان</span> <span class="mycostinfo_old">{{post.old_price}}</span>
+                <i class="fas fa-dollar-sign"></i> </span>
+            </div>
+
+
+          </div>
+          <div class="card-action buy_btn">
+            <a href="#">اطلاعات بیشتر و خرید</a>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <div id="general" class="col s12">
+    {% for post in mypost %}
+      {% if post.active and post.tag == "general" %}
+      <div class="col s4 m4 mycard">
+        <div class="card ">
+          <div class="card-image waves-effect waves-light">
+            <img  src="https://www.wmmpa.com/wp-content/uploads/2017/02/book-icon.png" style="height:300px !important">
+          </div>
+          <div class="card-content mycard-content">
+            <span class="card-title">{{post.title}}</span>
+            <hr>
+          </div>
+          <div class="card-content book_info">
+            <div class=>
+              <span>نام کتاب: <span class="myinfo">{{post.name}}</span>
+              <i class="fas fa-book"></i> </span>
+            </div>
+
+            <div>
+              <span>نام نویسنده : <span class="myinfo">{{post.author}}</span>
+              <i class="fas fa-portrait"></i> </span>
+            </div>
+
+            <div>
+              <span>سال چاپ: <span class="myinfo">{{post.year}}</span>
+              <i class="fas fa-calendar-check"></i> </span>
+            </div>
+
+            <div>
+              <span>میزان نو بودن: <span class="myinfo"> %{{post.rank}}</span>
+              <i class="fas fa-award"></i> </span>
+            </div>
+
+            <div>
+              <span>قیمت فروش:<span class="mycostinfo_new"> {{post.new_price}} تومان</span> <span class="mycostinfo_old">{{post.old_price}}</span>
+                <i class="fas fa-dollar-sign"></i> </span>
+            </div>
+
+
+          </div>
+          <div class="card-action buy_btn">
+            <a href="#">اطلاعات بیشتر و خرید</a>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <div id="pamphlets" class="col s12">
+    {% for post in mypost %}
+      {% if post.active and post.tag == "pamphlets" %}
+      <div class="col s4 m4 mycard">
+        <div class="card ">
+          <div class="card-image waves-effect waves-light">
+            <img  src="https://www.wmmpa.com/wp-content/uploads/2017/02/book-icon.png" style="height:300px !important">
+          </div>
+          <div class="card-content mycard-content">
+            <span class="card-title">{{post.title}}</span>
+            <hr>
+          </div>
+          <div class="card-content book_info">
+            <div class=>
+              <span>نام کتاب: <span class="myinfo">{{post.name}}</span>
+              <i class="fas fa-book"></i> </span>
+            </div>
+
+            <div>
+              <span>نام نویسنده : <span class="myinfo">{{post.author}}</span>
+              <i class="fas fa-portrait"></i> </span>
+            </div>
+
+            <div>
+              <span>سال چاپ: <span class="myinfo">{{post.year}}</span>
+              <i class="fas fa-calendar-check"></i> </span>
+            </div>
+
+            <div>
+              <span>میزان نو بودن: <span class="myinfo"> %{{post.rank}}</span>
+              <i class="fas fa-award"></i> </span>
+            </div>
+
+            <div>
+              <span>قیمت فروش:<span class="mycostinfo_new"> {{post.new_price}} تومان</span> <span class="mycostinfo_old">{{post.old_price}}</span>
+                <i class="fas fa-dollar-sign"></i> </span>
+            </div>
+
+
+          </div>
+          <div class="card-action buy_btn">
+            <a href="#">اطلاعات بیشتر و خرید</a>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
 </div>
 <!-- end of tabs -->
 </body>
